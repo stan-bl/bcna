@@ -46,10 +46,11 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 		storeUpgrades := storetypes.StoreUpgrades{
 			Added: []string{
 				circuittypes.ModuleName,
-				"feeibc",
+				//"feeibc",
 				nft.ModuleName,
 			},
 		}
+		fmt.Sprintf("Store upgrades...")
 
 		// configure store loader that checks if version == upgradeHeight and applies store upgrades
 		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
